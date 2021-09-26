@@ -1,3 +1,8 @@
 .homeContainer{
     margin-top: 120px;
 }
+
+.cardBody{
+    height: 70vh;
+    overflow: auto;
+}

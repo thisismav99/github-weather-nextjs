@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 
-const Weather = ({ data }) => {
+const Weather = ({ data, url }) => {
     const icons = ["bi bi-brightness-high-fill", "bi bi-cloud-fill", "bi bi-cloud-lightning-rain-fill", "bi bi-cloud-rain-fill"]
     const [weatherIcon, setWeatherIcon] = useState(null);
     const subscribe = useRef(false);
@@ -36,7 +36,10 @@ const Weather = ({ data }) => {
                             <h3>WEATHER TODAY <i className="bi bi-thermometer"></i></h3>
                         </div>
                         <div className="card-body">
-                            <p className="fs-1 text-center">PHILIPPINES <i className={weatherIcon}></i></p>
+                            <p className="fs-1 text-center">
+                                {url !== null ? url.replace("philippines-", "").toUpperCase() : "PHILIPPINES"} 
+                                &nbsp;<i className={weatherIcon}></i>
+                            </p>
                             <div className="row">
                                 <div className="col-xl-6">
                                     <p className="fs-3">

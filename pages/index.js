@@ -21,7 +21,6 @@ const Home = ({data}) => {
     <div className={styles.homeContainer}>
       <Head>
         <title>WEATHER | HOME</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container">
           <p className="display-3">
@@ -39,7 +38,13 @@ const Home = ({data}) => {
           </p>
 
           <div className="mt-3">
-            <Weather data={data} />
+            <Weather data={data} url={null} />
+
+            <div className="text-center mt-3">
+              <Link href="/ncr">
+                <a className="btn btn-primary">CHOOSE NCR LGU</a>
+              </Link>
+            </div>
           </div>
       </div> 
     </div>
